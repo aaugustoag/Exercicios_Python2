@@ -19,7 +19,7 @@ class Livro():
 
   @property
   def referencia_livro(self):
-    return "{tirulo}, {ano}, {autor}".format(autor=self.autor, tirulo=self.titulo, ano=self.ano)
+    return "{titulo}, {ano}, {autor}".format(autor=self.autor, titulo=self.titulo, ano=self.ano)
 
   def __str__(self):
     return self.referencia_livro
@@ -34,3 +34,11 @@ class Biblioteca():
 
   def __str__(self):
     return "; ".join([str(livro) for livro in self.livros])
+
+  def livros_por_autor(self, autor):
+    lista_do_autor = {}
+    lista_do_autor[autor] = {}
+    for livro in self.livros:
+      if livro.autor == autor:
+        lista_do_autor[autor][livro.titulo] = livro.ano
+    return lista_do_autor

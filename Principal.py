@@ -4,7 +4,7 @@ nome2 = "ALEXANDRE AUGUSTO AGUIAR GOMES"
 nome1 = "daniel hassan dalip"
 nome3 = "maluco da internet"
 
-titulo1 = "Aula Python"
+titulo1 = "Aula Python 01"
 ano1 = 2019
 
 titulo2 = "Baby Shark"
@@ -12,6 +12,9 @@ ano2 = 2018
 
 titulo3 = "Arvore da Montanha"
 ano3 = 2000
+
+titulo4 = "Aula Python 02"
+ano4 = 2020
 
 print("\nTarefa Autor")
 a1 = Classes.Autor(nome1, "01/05/1979")
@@ -34,9 +37,12 @@ l2 = Classes.Livro(titulo2, ano2, a2.nome_como_citado)
 print(l2.referencia_livro)
 l3 = Classes.Livro(titulo3, ano3, a3.nome_como_citado)
 print(l3.referencia_livro)
+l4 = Classes.Livro(titulo4, ano4, a1.nome_como_citado)
+print(l4.referencia_livro)
 
 print("\nTarefa Biblioteca")
 b1 = Classes.Biblioteca([l1,l2])
-print(b1)
 b1.add_livro(l3)
+b1.add_livro(l4)
 print(b1)
+print(b1.livros_por_autor(a1.nome_como_citado))
